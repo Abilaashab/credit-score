@@ -60,8 +60,6 @@ const RiskAndSupportFactors = () => {
   });
 
   const collateralProvided = watch('collateralProvided');
-  const loanAmountRequested = watch('loanAmountRequested');
-  const collateralValue = watch('collateralValue');
 
   const onSubmit = (data: RiskAndSupportFactorsForm) => {
     // Convert numeric values and store

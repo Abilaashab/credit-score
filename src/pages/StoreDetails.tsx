@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {
   Box,
@@ -14,11 +14,10 @@ import {
   FormControlLabel,
   Radio,
   RadioGroup,
-  MenuItem,
   Grid,
   Slider,
 } from '@mui/material';
-import { useForm, Controller, FieldValues } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 
 const steps = ['Financial Details', 'Credit History', 'Business Details', 'Operational Details', 'Risk & Support Factors'];
 

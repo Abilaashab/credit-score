@@ -1,4 +1,6 @@
-interface StoreDetails {
+// Interface for comprehensive store details used in credit score calculation
+// Kept for potential future use or documentation purposes
+export interface StoreDetails {
   monthlySales: number;
   profitMargin: number;
   monthlyEMI: number;
@@ -274,6 +276,23 @@ const calculateRiskSupportScore = (input: CreditScoreInput): SubScore => {
   explanation += `Risk factors: ${riskFactors.join(', ')}. `;
 
   return { score, explanation };
+};
+
+export const mapStoreDetailsToScoreInput = (storeDetails: StoreDetails): CreditScoreInput => {
+  return {
+    storeName: '', // This would need to be passed separately
+    yearsInOperation: storeDetails.yearsInOperation,
+    shopSize: storeDetails.shopSize,
+    monthlySales: storeDetails.monthlySales,
+    profitMargin: storeDetails.profitMargin,
+    buildingOwnership: storeDetails.buildingOwnership,
+    cibilScore: storeDetails.cibilScore,
+    bankingYears: storeDetails.bankingYears,
+    defaults: storeDetails.defaults,
+    digitalPayments: storeDetails.digitalPayments,
+    inventoryTurnover: storeDetails.inventoryTurnover,
+    onlinePresence: storeDetails.onlinePresence
+  };
 };
 
 export const calculateCreditScore = (input: CreditScoreInput): CreditScoreResult => {

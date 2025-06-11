@@ -62,6 +62,9 @@ const CreditHistory = () => {
   const previousLoans = watch('previousLoans');
   const fullyRepaidLoans = watch('fullyRepaidLoans');
 
+  // Add a simple validation logic using fullyRepaidLoans
+  const isLoanRepaymentSatisfactory = fullyRepaidLoans > 0 && fullyRepaidLoans >= previousLoans * 0.5;
+
   const onSubmit = (data: CreditHistoryDetails) => {
     // Convert all values to numbers and store
     const formattedData = {
@@ -75,6 +78,7 @@ const CreditHistory = () => {
     };
     formDataStore.setCreditHistoryDetails(formattedData);
     console.log('Stored credit history data:', formattedData);
+    console.log('Loan Repayment Satisfactory:', isLoanRepaymentSatisfactory);
     navigate('/business-stability');
   };
 
