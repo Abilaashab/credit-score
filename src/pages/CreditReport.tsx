@@ -8,7 +8,6 @@ import {
   CardContent,
   Chip,
   CircularProgress,
-  Divider,
   List,
   ListItem,
   ListItemText,
@@ -18,7 +17,7 @@ import {
   AccordionSummary,
   AccordionDetails,
 } from '@mui/material';
-import { Build, InfoOutlined as InfoIcon } from '@mui/icons-material';
+import { InfoOutlined as InfoIcon } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
